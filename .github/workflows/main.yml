@@ -6,7 +6,7 @@ on:
       - master
   schedule:
     # nightly build
-    - cron: "0 0 * * *"
+    - cron: "0 0 1,12,23 * *"
 
 jobs:
   build:
@@ -46,13 +46,13 @@ jobs:
     - name: Install dependencies
       if: ${{ success() && steps.upstream_tag.outputs.build_hash != steps.git_tag.outputs.tag }}
       run: |
-        echo "Force brew install for 10.14"
-        export MACOSX_DEPLOYMENT_TARGET="10.14"
+        echo "Force brew install for 10.13"
+        export MACOSX_DEPLOYMENT_TARGET="10.13"
         brew update-reset
         brew update-reset
         path="$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula"
-        for dep in rav1e dav1d theora libunistring libtasn1 rtmpdump pcre p11-kit libogg speex tesseract xvid snappy rubberband libsamplerate libsndfile flac opus opencore-amr libvpx libvorbis libvidstab libsoxr frei0r aom srt leptonica webp lame glib openjpeg openssl@1.1 docutils ffmpeg jpeg libarchive libass little-cms2 luajit mujs pkg-config uchardet youtube-dl zimg ffmpeg sdl2 libb2 lz4 xz zstd libbluray libffi fontconfig freetype libpng fribidi giflib gmp gnutls libidn2 nettle graphite2 harfbuzz gettext libtiff little-cms2 x264 x265; do sed -i "" $'s/def install/def install\\\n    ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.14"\\\n/' $path/$dep.rb;done
-        for dep in luajit python@3.8; do sed -i "" $'s/MacOS.version/"10.14"/' $path/$dep.rb;done
+        for dep in rav1e dav1d theora libunistring libtasn1 rtmpdump pcre p11-kit libogg speex tesseract xvid snappy rubberband libsamplerate libsndfile flac opus opencore-amr libvpx libvorbis libvidstab libsoxr frei0r aom srt leptonica webp lame glib openjpeg openssl@1.1 docutils ffmpeg jpeg libarchive libass little-cms2 luajit mujs pkg-config uchardet youtube-dl zimg ffmpeg sdl2 libb2 lz4 xz zstd libbluray libffi fontconfig freetype libpng fribidi giflib gmp gnutls libidn2 nettle graphite2 harfbuzz gettext libtiff little-cms2 x264 x265; do sed -i "" $'s/def install/def install\\\n    ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.13"\\\n/' $path/$dep.rb;done
+        for dep in luajit python@3.8; do sed -i "" $'s/MacOS.version/"10.13"/' $path/$dep.rb;done
         echo "Insall packages from source. ATTN: order matters"
         brew uninstall --ignore-dependencies openssl
         brew cleanup
@@ -136,7 +136,7 @@ jobs:
         git fetch
         echo "::set-output name=build_hash::$(sh version.sh)"
         export PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig/:$PKG_CONFIG_PATH"
-        export MACOSX_DEPLOYMENT_TARGET="10.14"
+        export MACOSX_DEPLOYMENT_TARGET="10.13"
         mv VERSION VERSION.bak
         python3 bootstrap.py
         python3 waf configure
@@ -185,7 +185,7 @@ jobs:
             mpv nightly build
             build date: ${{ steps.timestamp.outputs.date }}
             version: ${{ steps.upstream_tag.outputs.build_hash }}
-            OS support: macOS 10.14 or later
+            OS support: macOS High Sierra 10.13 or later
         draft: false
         prerelease: false
 
