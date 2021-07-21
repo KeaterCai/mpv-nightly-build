@@ -157,8 +157,7 @@ jobs:
           count=0
           count=`otool -l $l | grep -c minos` || :
           if [ $count -gt 0 ]; then
-            echo 'find bad dylib. need to recompile it'
-            exit 1
+            echo 'find bad dylib. need to recompile it, system requirement is 10.15'
           else
             echo 'ok'
           fi
@@ -186,7 +185,7 @@ jobs:
             mpv nightly build
             build date: ${{ steps.timestamp.outputs.date }}
             version: ${{ steps.upstream_tag.outputs.build_hash }}
-            OS support: macOS High Sierra 10.13 or later
+            OS support: macOS 10.15 or later
         draft: false
         prerelease: false
 
