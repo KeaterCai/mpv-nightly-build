@@ -83,6 +83,7 @@ jobs:
         brew reinstall -s p11-kit
         brew reinstall -s rtmpdump
         brew install -s sdl2
+        brew reinstall -s sdl2
         brew install -s libb2
         brew install -s libbluray
         brew install -s fribidi
