@@ -187,7 +187,7 @@ jobs:
             version: ${{ steps.upstream_tag.outputs.build_hash }}
             OS support: macOS 10.15 or later
         draft: false
-        prerelease: false
+        prerelease: true
 
     - name: Upload Release Asset
       id: upload-release-asset
