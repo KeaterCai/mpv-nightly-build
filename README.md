@@ -1,6 +1,6 @@
 # mpv nightly build for macOS
 
-This repository is forked from ![mpv nightly build](https://github.com/jnozsc/mpv-nightly-build), this `README.md` is mainly written by ![jnozsc](https://github.com/jnozsc) (the original author). The author seems to stop publishing nightly binaries. Recently, I needed to open a movie encoded in `av1`, and find the decoder library ![dav1d](https://github.com/videolan/dav1d) of this nightly build is not up to date, which leads to low speed of decoding, and the performance of the new version encoder has been improved. 
+This repository is forked from ![mpv nightly build](https://github.com/jnozsc/mpv-nightly-build), this `README.md` is mainly written by ![jnozsc](https://github.com/jnozsc) (the original author). The author seems to stop publishing nightly binaries. Recently, I needed to open a movie encoded in `av1`, and found the decoder library ![dav1d](https://github.com/videolan/dav1d) of this nightly build was not up-to-date, which leads to low speed of decoding, and the performance of the new version encoder has been improved. 
 
 ![build](https://github.com/KeaterCai/mpv-nightly-build/workflows/build/badge.svg)
 ![downloads](https://img.shields.io/github/downloads/KeaterCai/mpv-nightly-build/total.svg?style=flat&labelColor=323940&color=brightgreen&logo=github)
