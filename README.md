@@ -27,6 +27,10 @@ The original ![auther(jnozsc)](https://github.com/jnozsc) setups this automatica
 
 Well, I use `mpv.app` on macOS only.
 
+### Why no binary for m1 chip?
+
+I only have Intel-chip Mac and temporarily there is no binary for m1-chip Mac.
+
 ### System requirements
 
 A modern Macintosh machine officially supported by Apple.
@@ -40,7 +44,7 @@ A modern Macintosh machine officially supported by Apple.
 | Big Sur | 11.0 | ❓ |
 | Catalina | 10.15 | 🟢 |
 | Mojave | 10.14 | 🟢 |
-| High Sierra | 10.13 | 🟢 |
+| High Sierra | 10.13 | ❓ |
 | Sierra | 10.12 | ❌ |
 | Any older versions | < 10.12 | ❌ |
 
@@ -48,10 +52,11 @@ A modern Macintosh machine officially supported by Apple.
 * ❌ means incompatible
 * ❓ means unknown
 * *Tips: From mpv 0.33.1 nightly build upwards, only limited binaries are certainly compatible with High Sierra 10.13*
+* *Tips: From mpv 0.34.0 nightly build upwards, no binaries are certainly compatible with High Sierra 10.13*
 
 macOS, formerly known as OS X, does not have an official statement about its End-Of-Life policy. Based on [wikipedia](https://en.wikipedia.org/wiki/MacOS_version_history), it seems Apple only provides support to last 3 major release versions. So I try my best to support last 3 major release versions.
 
-***Be Careful: the automatical nightly job to build mpv only builds `mpv.app` supporting macOS 10.14 or above. Binary for macOS 10.13 is occasionally built locally (This binary includes libraries of encoders. Therefore, the size of it can be larger)***
+***Be Careful: the automatical nightly job to build mpv only builds `mpv.app` supporting macOS 10.15 or above. Binary for macOS 10.13 is occasionally built.( From `mpv 0.34.0` on, OS Support has been updated to macOS 10.14 )***
 
 ### Why nightly? I need the **stable** version
 
